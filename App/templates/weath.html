@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <main>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="https://4.bp.blogspot.com/-XcoeXzWDc0A/WIl50TQG32I/AAAAAAAACTM/_Kz6JzZippwKP_xCO53ikKwt4OIHwQcNgCLcB/s1600/VEKTOR%2BICON3.png" alt="">
+            </div>
+            <div class="text-center mt-4 name">
+                Blog Post - Weather
+            </div>
+            <form class="p-3 mt-3" method='POST' action="">
+                {{ form.hidden_tag() }}
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <!-- <input type="password" name="password" id="pwd" placeholder="Password"> -->
+                            {% if form.city.errors %}
+                                {{ form.city(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.city.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.city(class='input', type='text', placeholder='City Name') }}
+                            {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+            <article class="media">
+                <div class="media-left">
+                    {% if weather %}
+                    <figure class="image is-50x50">
+                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <span class="title">{{ weather.city }}</span>
+                            <br>
+                            <span class="subtitle">{{ weather.temperature }}° F</span>
+                            <br> {{ weather.description }}
+                        </p>
+                    {% else %}
+                        {% if get_flashed_messages() %}
+                            <div>
+                                {% for message in get_flashed_messages() %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p>Give It a Try!</p>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+{% endblock content %}
