@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from App.models import Post
-from App.main.forms import FeedbackForm
-from App.models import Feedback
-from App import db
+from Project.models import Post
+from Project.main.forms import FeedbackForm
+from Project.models import Feedback
+from Project import db
 
 main = Blueprint('main',__name__)
 

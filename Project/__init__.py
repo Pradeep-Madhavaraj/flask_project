@@ -28,11 +28,11 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
 
-from App.main.routes import main
-from App.users.routes import users
-from App.posts.routes import posts
-from App.errors.handlers import errors
-from App.weather.routes import weather
+from Project.main.routes import main
+from Project.users.routes import users
+from Project.posts.routes import posts
+from Project.errors.handlers import errors
+from Project.weather.routes import weather
 
 app.register_blueprint(main)
 app.register_blueprint(users)

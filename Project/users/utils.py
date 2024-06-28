@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from flask import url_for
 from flask_mail import Message
-from App import mail, app
+from Project import mail, app
 
 
 

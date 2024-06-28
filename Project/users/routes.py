@@ -1,9 +1,9 @@
 from flask import Blueprint, redirect, render_template, flash, request, url_for
 from flask_login import login_required, login_user, logout_user, current_user
-from App.users.utils import save_picture, sent_reset_mail
-from App.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
-from App.models import User
-from App import bcrypt, db
+from Project.users.utils import save_picture, sent_reset_mail
+from Project.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
+from Project.models import User
+from Project import bcrypt, db
 
 
 users = Blueprint('users',__name__)

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash
-from App.weather.forms import WeatherForm
+from Project.weather.forms import WeatherForm
 import requests
 
 

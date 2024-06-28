@@ -1,4 +1,4 @@
-from App import db, login_manager, app
+from Project import db, login_manager, app
 from datetime import datetime, timezone
 from flask_login import UserMixin
 from itsdangerous import URLSafeTimedSerializer
